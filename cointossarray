@@ -1,0 +1,69 @@
+main();
+
+
+function main() {
+  var myArray = [];
+  genCoinArray(myArray, 25);
+  alert(myArray);
+}
+
+
+function genRandom(fromVal, toVal) {
+  var rndNumber;
+  rndNumber = Math.floor(Math.random() * toVal) + fromVal;
+  return rndNumber;
+}
+
+
+
+function genCoinArray(coinArray, flipCount) {
+var rnd; var val;
+for (var i = 0; i < flipCount; i++) {
+rnd = genRandom(1, 2);
+switch(rnd) {
+case 1:
+val = "Heads";
+break;
+case 2:
+val = "Tails";
+break;
+default:
+val = "Error: Out of range " + myRnd;
+}
+coinArray.push(val);
+}
+}
+
+
+
+
+
+function displayCoinTossCounts(coinArray) {
+  var heads = 0;
+  var tails = 0;
+  var defaultVal = 0;
+  for (var i = 0; coinArray.length > 0; i++) {
+    myVal = coinArray.pop();
+    switch (myVal) {
+      case "Heads":
+        heads++;
+        break;
+      case "Tails":
+        tails++;
+        break;
+      default:
+        defaultVal++;
+    }
+  }
+  console.log("Head count: " + heads);
+  console.log("Tail count: " + tails);
+  
+}
+
+
+function main() {
+  var myArray = [];
+  genCoinArray(myArray, 25);
+  console.log(myArray);
+  displayCoinTossCounts(myArray);
+}
